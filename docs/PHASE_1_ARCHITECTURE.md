@@ -1,7 +1,8 @@
 # École Misk — Application enseignants
 ## Phase 1 : analyse et architecture
 
-> Statut : **proposition à valider**. Aucun code applicatif n'a été écrit.
+> Statut : **validée** (réponses du 2026-10-02 intégrées, voir §13 — elles priment
+> sur les sections précédentes en cas de divergence).
 > Aucune Google Sheet n'a été modifiée. Les constats ci-dessous proviennent d'une
 > lecture seule de `Base-de-donnees` et du classeur du groupe G05 (Rahman-1).
 > Aucune donnée personnelle (noms d'élèves, emails de parents, IDs de fichiers)
@@ -707,3 +708,24 @@ remarque.
 9. **Q9 – Un enseignant = un groupe** : y a-t-il des remplaçants, ou un enseignant
    susceptible d'avoir deux groupes plus tard ? Le modèle `Enseignants` le permettrait
    sans refonte.
+
+---
+
+## 13. Décisions validées (2026-10-02)
+
+| # | Décision | Conséquence sur l'architecture |
+|---|---|---|
+| Q1 | Nouvel onglet **`Enseignants`** dans `Base-de-donnees`, lié à `Groupes` | Colonnes : `Email`, `Nom`, `Groupe_ID` (= `Groupes.Groupe_ID`, liste déroulante conseillée), `Role` (`TEACHER`/`ADMIN`), `Actif`. Le serveur refuse un email en double ou un `Groupe_ID` inconnu de `Groupes`. Le classeur `Misk-App-Data` n'est **pas** créé. |
+| Q1' | Données techniques restantes (statuts/versions, logs, notifications) | **Proposition** : onglets préfixés `App_` dans `Base-de-donnees` (`App_Seances`, `App_Logs`, `App_Notifications`), créés par une fonction `setup()` lancée **manuellement** par l'admin en Phase 3. Aucun onglet existant n'est modifié. |
+| Q2 | « Non évalué » : **cellule vide ou `--`**, les deux valides | Lecture : vide, `--` (et `NA` hérité) → `null`. Écriture : valeur paramétrable (`NULL_WRITE_VALUE`), **vide par défaut**. |
+| Q3 | **L'application n'écrit jamais la date** ; les feuilles sont préparées à la main | `findSessionBlockByDate` = recherche **stricte** de la date en ligne 4. Pas de « prochain bloc vide ». Date absente → `SESSION_BLOCK_NOT_READY` : « La séance n'est pas encore préparée dans la feuille du groupe. Contactez l'administration. » `sessions.list` indique pour chaque date si son bloc est prêt (`blockReady`). |
+| Q4 | Remarque = **note de cellule** sur la case Discipline | Écriture en un appel `setNotes` (colonne Discipline du bloc). Lecture `getNotes`. Remarque vidée → note supprimée. Une note déjà présente est lue comme la remarque. Les notes entrent dans le `baseHash` (détection de conflit). |
+| Q5 | Admin : l'adresse de l'école | Ligne `Role = ADMIN` dans `Enseignants`, `Groupe_ID` vide. Rien n'est codé en dur dans l'app ni dans le dépôt. |
+| Q6 | Pas de cours le 06-09-2026 | Corriger `Calendrier` (`PAS_COURS`) à la main. De toute façon, le bloc ne sera pas trouvé (Q3). |
+| Q7 | Un PIN par enseignant | Pas de contrôle d'unicité globale. |
+| Q8 | Aucun script connu sur les classeurs | Prudence maintenue : écriture de valeurs et de notes uniquement, jamais de formatage. |
+| Q9 | Un enseignant → un groupe | `Groupe_ID` unique par ligne `Enseignants`. |
+
+Conséquence pratique de Q3 : **la ligne 4 (date) des blocs doit être remplie à
+l'avance** pour que les enseignants puissent saisir une séance. Aujourd'hui, seuls les
+blocs des séances passées sont datés.

@@ -1,0 +1,198 @@
+{
+  "@@locale": "fr",
+  "appTitle": "École Misk",
+  "navHome": "Accueil",
+  "navSessions": "Mes séances",
+  "navSync": "Synchronisation",
+  "navSettings": "Paramètres",
+  "navDashboard": "Tableau de bord",
+  "logout": "Déconnexion",
+  "loginTitle": "Connexion",
+  "loginSubtitle": "Espace enseignants",
+  "loginWithGoogle": "Se connecter avec Google",
+  "loginOr": "ou",
+  "emailLabel": "Email",
+  "pinLabel": "PIN (5 chiffres)",
+  "loginWithPin": "Se connecter avec le PIN",
+  "pinInvalidFormat": "Le PIN doit contenir exactement 5 chiffres.",
+  "emailInvalid": "Adresse email invalide.",
+  "fieldHifz": "Hifz",
+  "fieldTajwid": "Tajwid",
+  "fieldDiscipline": "Discipline",
+  "fieldPresence": "Présence",
+  "fieldRemark": "Remarque",
+  "fieldStudent": "Élève",
+  "present": "Présent",
+  "absent": "Absent",
+  "notEvaluated": "Non évalué",
+  "statusDraft": "Brouillon",
+  "statusReady": "Prête à envoyer",
+  "statusSent": "Envoyée",
+  "statusSynced": "Synchronisée",
+  "statusNeedsCorrection": "À corriger",
+  "statusValidated": "Validée",
+  "statusNotSent": "Non envoyée",
+  "statusNotPrepared": "Non préparée",
+  "homeGreeting": "Bonjour {name}",
+  "@homeGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "homeSelectedSession": "Séance sélectionnée",
+  "homeNoSession": "Aucune séance disponible pour le moment.",
+  "start": "Commencer",
+  "continueAction": "Continuer",
+  "viewAction": "Consulter",
+  "chooseAnotherSession": "Choisir une autre séance",
+  "sessionTitle": "Séance du {date}",
+  "@sessionTitle": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sessionNumber": "Séance n° {number}",
+  "@sessionNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "groupLabel": "Groupe",
+  "sessionLabel": "Séance",
+  "savedLocally": "Enregistré localement",
+  "pendingChanges": "{count, plural, =0{Aucune modification non synchronisée} =1{1 modification non synchronisée} other{{count} modifications non synchronisées}}",
+  "@pendingChanges": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pendingUploads": "{count, plural, =0{Aucun envoi en attente} =1{1 envoi en attente} other{{count} envois en attente}}",
+  "@pendingUploads": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reviewSession": "Vérifier la séance",
+  "reviewTitle": "Vérification avant envoi",
+  "send": "Envoyer",
+  "cancel": "Annuler",
+  "confirm": "Confirmer",
+  "close": "Fermer",
+  "retry": "Réessayer",
+  "reload": "Recharger la séance",
+  "confirmSendTitle": "Confirmer l'envoi",
+  "confirmSendMessage": "Êtes-vous certain de vouloir envoyer les notes de cette séance ?",
+  "syncSuccess": "Notes synchronisées",
+  "queuedOffline": "Pas de connexion : l'envoi partira dès le retour du réseau. Vos notes sont conservées.",
+  "summaryStudents": "Élèves",
+  "summaryPresent": "Présents",
+  "summaryAbsent": "Absents",
+  "summaryNotEvaluated": "Notes non évaluées",
+  "summaryDisciplineRemarks": "Remarques de discipline",
+  "summaryBlocking": "Erreurs à corriger",
+  "issueMissingRemark": "Remarque obligatoire : discipline inférieure à 7.",
+  "issueInvalidGrade": "Note invalide : de 0 à 10, par pas de 0,25.",
+  "issueAbsentWithGrade": "Élève absent : les notes doivent être « -- ».",
+  "issueNotEvaluated": "Note non évaluée.",
+  "issueDuplicate": "Élève en double.",
+  "issueNoStudents": "Aucun élève dans cette séance.",
+  "lockedMessage": "Cette séance a été validée par l'administration et ne peut plus être modifiée.",
+  "pendingUploadMessage": "Envoi en attente : annulez l'envoi pour modifier la séance.",
+  "cancelUpload": "Annuler l'envoi",
+  "correctionRequested": "Correction demandée : {comment}",
+  "@correctionRequested": {
+    "placeholders": {
+      "comment": {
+        "type": "String"
+      }
+    }
+  },
+  "previousStudent": "Élève précédent",
+  "nextStudent": "Élève suivant",
+  "remarkHint": "Remarque libre",
+  "remarkRequiredHint": "Obligatoire : discipline inférieure à 7",
+  "gradeInputHint": "0 à 10, pas de 0,25",
+  "decrease": "Diminuer de 0,25",
+  "increase": "Augmenter de 0,25",
+  "sessionsEmpty": "Aucune séance disponible.",
+  "noClass": "Pas de cours",
+  "syncNow": "Synchroniser maintenant",
+  "syncUpToDate": "Tout est synchronisé",
+  "lastSync": "Dernière synchronisation : {date}",
+  "@lastSync": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "neverSynced": "Jamais synchronisée",
+  "settingsLanguage": "Langue",
+  "languageFrench": "Français",
+  "languageArabic": "العربية",
+  "settingsSimulateOffline": "Simuler l'absence de réseau (démo)",
+  "settingsAccount": "Compte",
+  "logoutPendingMessage": "Des envois sont en attente. Se déconnecter supprimerait ces notes de l'appareil.",
+  "logoutAnyway": "Se déconnecter quand même",
+  "conflictTitle": "Séance modifiée ailleurs",
+  "adminTeacher": "Enseignant : {name}",
+  "@adminTeacher": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "adminViewGrades": "Voir les notes",
+  "adminRequestCorrection": "Renvoyer à corriger",
+  "adminValidate": "Valider",
+  "adminCorrectionComment": "Commentaire pour l'enseignant",
+  "adminConfirmValidate": "Valider et verrouiller cette séance ? L'enseignant ne pourra plus la modifier.",
+  "adminValidated": "Séance validée",
+  "adminCorrectionSent": "Séance renvoyée en correction",
+  "adminReadOnly": "Lecture seule : l'administration ne modifie pas les notes.",
+  "notifValidated": "Votre séance du {date} a été validée.",
+  "@notifValidated": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "notifNeedsCorrection": "La séance du {date} a été renvoyée pour correction.",
+  "@notifNeedsCorrection": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "errorNetwork": "Pas de connexion Internet. Vos données sont conservées sur l'appareil.",
+  "errorTimeout": "Le serveur met trop de temps à répondre. Réessayez.",
+  "errorInvalidCredentials": "Email ou PIN incorrect.",
+  "errorNotAuthorized": "Cette adresse n'est pas autorisée. Contactez l'administration.",
+  "errorAuthExpired": "Votre session a expiré. Reconnectez-vous : vos saisies sont conservées.",
+  "errorRateLimited": "Trop de tentatives. Réessayez dans 15 minutes.",
+  "errorForbiddenGroup": "Accès refusé à ce groupe.",
+  "errorSheetNotFound": "La feuille du groupe est introuvable. Contactez l'administration.",
+  "errorSessionNotFound": "Séance introuvable.",
+  "errorNotAClassDay": "Pas de cours à cette date.",
+  "errorBlockNotReady": "La séance n'est pas encore préparée dans la feuille du groupe. Contactez l'administration.",
+  "errorStudentMismatch": "La liste des élèves a changé dans la feuille. Rechargez la séance.",
+  "errorSheetStructure": "La feuille du groupe a une structure inattendue. Contactez l'administration.",
+  "errorValidation": "Certaines notes sont invalides. Vérifiez la séance.",
+  "errorConflict": "La séance a été modifiée depuis votre téléchargement. Rechargez-la ; vos valeurs restent consultables.",
+  "errorLockTimeout": "Le serveur est occupé. Réessayez dans un instant.",
+  "errorOfflineNoCopy": "Cette séance n'a pas encore été téléchargée. Connectez-vous à Internet pour l'ouvrir.",
+  "errorInternal": "Une erreur inattendue s'est produite. Réessayez ; si le problème persiste, contactez l'administration."
+}
